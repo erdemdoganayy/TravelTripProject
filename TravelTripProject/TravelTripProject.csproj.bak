@@ -128,38 +128,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\css\slider.css" />
-    <Content Include="assets\css\style.css" />
-    <Content Include="assets\images\about_banner.jpg" />
-    <Content Include="assets\images\arrows.png" />
-    <Content Include="assets\images\but.png" />
-    <Content Include="assets\images\contact.png" />
-    <Content Include="assets\images\dest_banner.jpg" />
-    <Content Include="assets\images\flight.png" />
-    <Content Include="assets\images\glass.png" />
-    <Content Include="assets\images\group.png" />
-    <Content Include="assets\images\head_bg.jpg" />
-    <Content Include="assets\images\head_bot.gif" />
-    <Content Include="assets\images\img1.jpg" />
-    <Content Include="assets\images\img2.jpg" />
-    <Content Include="assets\images\img3.jpg" />
-    <Content Include="assets\images\img4.jpg" />
-    <Content Include="assets\images\key.png" />
-    <Content Include="assets\images\link1-bg.gif" />
-    <Content Include="assets\images\logo.png" />
-    <Content Include="assets\images\pic.jpg" />
-    <Content Include="assets\images\pic1.jpg" />
-    <Content Include="assets\images\pic10.jpg" />
-    <Content Include="assets\images\pic2.jpg" />
-    <Content Include="assets\images\pic3.jpg" />
-    <Content Include="assets\images\pic4.jpg" />
-    <Content Include="assets\images\pic5.jpg" />
-    <Content Include="assets\images\pic6.jpg" />
-    <Content Include="assets\images\pic7.jpg" />
-    <Content Include="assets\images\pic8.jpg" />
-    <Content Include="assets\images\pic9.jpg" />
-    <Content Include="assets\js\jquery.min.js" />
-    <Content Include="assets\js\responsiveslides.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -170,13 +138,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Web1\about.html" />
-    <Content Include="Web1\contact.html" />
-    <Content Include="Web1\css\slider.css" />
-    <Content Include="Web1\css\style.css" />
-    <Content Include="Web1\destinations.html" />
-    <Content Include="Web1\index.html" />
-    <Content Include="Web1\w3layouts-License.txt" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -204,11 +165,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\Default\About.cshtml" />
-    <Content Include="Views\Default\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -264,11 +224,4 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
-  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
-    <ItemGroup>
-      <RoslynFiles Include="$(CscToolPath)\*" />
-    </ItemGroup>
-    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
-    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
-  </Target>
 </Project>

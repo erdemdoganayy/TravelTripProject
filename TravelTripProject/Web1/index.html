@@ -1,14 +1,67 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_TestLayout.cshtml";
-}
-
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE HTML>
 <html>
+<head>
+    <title>Free Easy-Trip Website Template | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
 
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
 <body>
-
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Contact : +91 00000-55555</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="hsubs" href="about.html">About</a></li>
+                <li>
+                    <a class="hsubs" href="destinations.html">Destinations</a>
+                    <ul class="subs">
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Beach Resorts</a></li>
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="destinations.html">Free Travel Guides</a></li>
+                <li><a href="/Default/Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="header-banner">
         <div class="wrap">
             <div class="banner">
@@ -17,7 +70,7 @@
                     <div class="banner-left">
                         <div class="con-text">
                             <div class="grid1-img">
-                                <img src="~/assets/images/glass.png" alt="">
+                                <img src="images/glass.png" alt="">
                             </div>
                             <div class="grid1-desc">
                                 <p>Restaurants</p>
@@ -26,7 +79,7 @@
                         </div>
                         <div class="con-text">
                             <div class="grid1-img">
-                                <img src="~/assets/images/flight.png" alt="">
+                                <img src="images/flight.png" alt="">
                             </div>
                             <div class="grid1-desc">
                                 <p>Flights</p>
@@ -35,7 +88,7 @@
                         </div>
                         <div class="con-text">
                             <div class="grid1-img">
-                                <img src="~/assets/images/group.png" alt="">
+                                <img src="images/group.png" alt="">
                             </div>
                             <div class="grid1-desc">
                                 <p>Things to do</p>
@@ -44,7 +97,7 @@
                         </div>
                         <div class="con-text">
                             <div class="grid1-img">
-                                <img src="~/assets/images/key.png" alt="">
+                                <img src="images/key.png" alt="">
                             </div>
                             <div class="grid1-desc">
                                 <p>Vacation Rents</p>
@@ -57,10 +110,10 @@
 
                         <div class="slider">
                             <ul class="rslides" id="slider1">
-                                <li><img src="~/assets/images/img1.jpg" alt=""></li>
-                                <li><img src="~/assets/images/img2.jpg" alt=""></li>
-                                <li><img src="~/assets/images/img3.jpg" alt=""></li>
-                                <li><img src="~/assets/images/img4.jpg" alt=""></li>
+                                <li><img src="images/img1.jpg" alt=""></li>
+                                <li><img src="images/img2.jpg" alt=""></li>
+                                <li><img src="images/img3.jpg" alt=""></li>
+                                <li><img src="images/img4.jpg" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -80,7 +133,7 @@
                 <div class="con-bot">
                     <div class="left">
                         <div class="bot-left">
-                            <img src="~/assets/images/pic.jpg" alt="" />
+                            <img src="images/pic.jpg" alt="" />
                         </div>
                         <div class="left-text">
                             <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
@@ -91,7 +144,7 @@
                     </div>
                     <div class="left">
                         <div class="bot-left">
-                            <img src="~/assets/images/pic1.jpg" alt="" />
+                            <img src="images/pic1.jpg" alt="" />
                         </div>
                         <div class="left-text">
                             <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
@@ -102,7 +155,7 @@
                     </div>
                     <div class="right">
                         <div class="bot-left">
-                            <img src="~/assets/images/pic2.jpg" alt="" />
+                            <img src="images/pic2.jpg" alt="" />
                         </div>
                         <div class="left-text">
 
@@ -136,21 +189,21 @@
                             <h4>Our Best Places</h4>
                             <div class="box-left">
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic3.jpg" alt="" />
+                                    <img src="images/pic3.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic7.jpg" alt="" />
+                                    <img src="images/pic7.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic8.jpg" alt="" />
+                                    <img src="images/pic8.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
@@ -159,21 +212,21 @@
                             </div>
                             <div class="box1-left">
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic9.jpg" alt="" />
+                                    <img src="images/pic9.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc1">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic10.jpg" alt="" />
+                                    <img src="images/pic10.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc1">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="bot-img">
-                                    <img src="~/assets/images/pic3.jpg" alt="" />
+                                    <img src="images/pic3.jpg" alt="" />
                                 </div>
                                 <div class="bot-desc1">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
@@ -187,8 +240,12 @@
             </div>
         </div>
     </div>
-    
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2013 Easy-Trip. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-
-
