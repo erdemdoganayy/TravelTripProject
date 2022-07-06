@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,11 +127,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Siniflar\Admin.cs" />
+    <Compile Include="Models\Siniflar\AdresBlog.cs" />
+    <Compile Include="Models\Siniflar\AnaSayfa.cs" />
+    <Compile Include="Models\Siniflar\Blog.cs" />
+    <Compile Include="Models\Siniflar\BlogYorum.cs" />
+    <Compile Include="Models\Siniflar\Context.cs" />
+    <Compile Include="Models\Siniflar\Hakkimizda.cs" />
+    <Compile Include="Models\Siniflar\Yorumlar.cs" />
+    <Compile Include="Models\Siniflar\İletisim.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,13 +190,62 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Web1\about.html" />
-    <Content Include="Web1\contact.html" />
-    <Content Include="Web1\css\slider.css" />
-    <Content Include="Web1\css\style.css" />
-    <Content Include="Web1\destinations.html" />
-    <Content Include="Web1\index.html" />
-    <Content Include="Web1\w3layouts-License.txt" />
+    <Content Include="web\about.html" />
+    <Content Include="web\contact.html" />
+    <Content Include="web\css\slider.css" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\destinations.html" />
+    <Content Include="web\images\about_banner.jpg" />
+    <Content Include="web\images\arrows.png" />
+    <Content Include="web\images\but.png" />
+    <Content Include="web\images\contact.png" />
+    <Content Include="web\images\dest_banner.jpg" />
+    <Content Include="web\images\flight.png" />
+    <Content Include="web\images\glass.png" />
+    <Content Include="web\images\group.png" />
+    <Content Include="web\images\head_bg.jpg" />
+    <Content Include="web\images\head_bot.gif" />
+    <Content Include="web\images\img1.jpg" />
+    <Content Include="web\images\img2.jpg" />
+    <Content Include="web\images\img3.jpg" />
+    <Content Include="web\images\img4.jpg" />
+    <Content Include="web\images\key.png" />
+    <Content Include="web\images\link1-bg.gif" />
+    <Content Include="web\images\logo.png" />
+    <Content Include="web\images\pic.jpg" />
+    <Content Include="web\images\pic1.jpg" />
+    <Content Include="web\images\pic10.jpg" />
+    <Content Include="web\images\pic2.jpg" />
+    <Content Include="web\images\pic3.jpg" />
+    <Content Include="web\images\pic4.jpg" />
+    <Content Include="web\images\pic5.jpg" />
+    <Content Include="web\images\pic6.jpg" />
+    <Content Include="web\images\pic7.jpg" />
+    <Content Include="web\images\pic8.jpg" />
+    <Content Include="web\images\pic9.jpg" />
+    <Content Include="web\index.html" />
+    <Content Include="web\js\jquery.min.js" />
+    <Content Include="web\js\responsiveslides.min.js" />
+    <Content Include="web\w3layouts-License.txt" />
+    <Content Include="web_blog\about.html" />
+    <Content Include="web_blog\contact.html" />
+    <Content Include="web_blog\css\bootstrap.css" />
+    <Content Include="web_blog\css\style.css" />
+    <Content Include="web_blog\images\avatar.png" />
+    <Content Include="web_blog\images\icon3.png" />
+    <Content Include="web_blog\images\logo.jpg" />
+    <Content Include="web_blog\images\man.jpg" />
+    <Content Include="web_blog\images\more.png" />
+    <Content Include="web_blog\images\post1.jpg" />
+    <Content Include="web_blog\images\post2.jpg" />
+    <Content Include="web_blog\images\post3.jpg" />
+    <Content Include="web_blog\images\search.png" />
+    <Content Include="web_blog\index.html" />
+    <Content Include="web_blog\js\easing.js" />
+    <Content Include="web_blog\js\jquery.min.js" />
+    <Content Include="web_blog\js\move-top.js" />
+    <Content Include="web_blog\single.html" />
+    <Content Include="web_blog\w3layouts-License.txt" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -204,12 +273,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\Default\About.cshtml" />
-    <Content Include="Views\Default\Contact.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -257,6 +327,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -271,4 +343,5 @@
     <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
     <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
