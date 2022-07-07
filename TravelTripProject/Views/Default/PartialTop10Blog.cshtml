@@ -1,0 +1,16 @@
+﻿@using TravelTripProject.Models.Siniflar
+@model List<Blog>
+@{
+    var counter = 0;
+}
+<div class="padding">
+    <h4>En İyi 10 Yer</h4>
+    <ul class="list list-pad">
+        @foreach (var item in Model)
+        {
+            counter++;
+            <li class="list-bg"><span>@counter.</span><a href="/Blog/BlogDetay/@item.Id">@item.Baslik</a></li>
+        }
+    </ul>
+    <a href="/Blog/Index" class="link1">Tüm Blogları Görüntüle ></a>
+</div>

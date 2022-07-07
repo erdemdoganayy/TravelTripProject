@@ -1,0 +1,42 @@
+﻿@using TravelTripProject.Models.Siniflar
+@model List<Blog>
+<div class="padding1">
+    <h4>En Sevdiğim Yerler</h4>
+    <div class="box-left">
+
+        @foreach (var item in Model)
+        {
+            if (item.Id <= 6)
+            {
+                <div class="bot-img">
+                   <a href="/Blog/BlogDetay/@item.Id"><img src="@item.BlogImage" alt="" /></a> 
+                </div>
+                <div class="bot-desc">
+                    <p>@item.Aciklama </p>
+                </div>
+                <div class="clear"></div>
+            }
+           
+        }
+
+
+    </div>
+
+    <div class="box1-left">
+        @foreach (var item in Model)
+        {
+            if (item.Id > 1000)
+            {
+                <div class="bot-img">
+                    <a href="/Blog/BlogDetay/@item.Id"><img src="@item.BlogImage" alt="" /></a>
+                </div>
+                <div class="bot-desc1">
+                    <p>@item.Aciklama.Substring(0,99) </p>
+                </div>
+                <div class="clear"></div>
+            }
+
+        }
+     
+    </div>
+</div>

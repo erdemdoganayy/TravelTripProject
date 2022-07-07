@@ -30,6 +30,16 @@ namespace TravelTripProject.Controllers
             var PartialBlog = db.Blogs.Take(3).OrderByDescending(x => x.Id).ToList();
             return PartialView(PartialBlog);
         }
+        public PartialViewResult PartialTop10Blog()
+        {
+            var PartialTop10Blog = db.Blogs.Take(10).ToList();
+            return PartialView(PartialTop10Blog);
+        }
+        public PartialViewResult PartialOurBest()
+        {
+            var PartialOurBest = db.Blogs.Take(7).OrderBy(x => x.Id).ToList();
+            return PartialView(PartialOurBest);
+        }
 
     }
 }
