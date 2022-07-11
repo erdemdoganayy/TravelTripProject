@@ -130,6 +130,7 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\GirisYapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,12 +184,20 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="webloginTema\css\style.css" />
+    <Content Include="webloginTema\images\b4.jpg" />
+    <Content Include="webloginTema\index.html" />
+    <Content Include="webloginTema\w3layouts-License.txt" />
     <Content Include="web\about.html" />
     <Content Include="web\contact.html" />
     <Content Include="web\css\slider.css" />
@@ -245,6 +254,8 @@
     <Content Include="web_blog\js\move-top.js" />
     <Content Include="web_blog\single.html" />
     <Content Include="web_blog\w3layouts-License.txt" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -281,6 +292,15 @@
     <Content Include="Views\Default\PartialOurBest.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\YeniBlogEkle.cshtml" />
+    <Content Include="Views\Admin\BlogBilgiGetir.cshtml" />
+    <Content Include="Views\Blog\PartialYorumYap.cshtml" />
+    <Content Include="Views\Admin\Yorumlar.cshtml" />
+    <Content Include="Views\Admin\YorumBilgiGetir.cshtml" />
+    <Content Include="Views\GirisYap\Login.cshtml" />
+    <Content Include="webloginTema\fonts\Asap-Regular.ttf" />
+    <Content Include="webloginTema\fonts\Audiowide-Regular.ttf" />
+    <Content Include="Views\Admin\Hakkimizda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

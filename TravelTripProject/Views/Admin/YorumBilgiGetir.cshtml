@@ -1,0 +1,25 @@
+﻿@model TravelTripProject.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumBilgiGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelle</h2>
+
+<form method="post" class="form-group" action="/Admin/YorumGuncelle">
+    <input type="hidden" class="form-control" id="exampleInputEmail1" name="Id" value="@Model.Id" aria-describedby="emailHelp">
+    <input type="hidden" class="form-control" id="exampleInputEmail1" name="BlogId" value="@Model.BlogId" aria-describedby="emailHelp">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kullanıcı Adı</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="KullaniciAdi" value="@Model.KullaniciAdi" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Mail</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="Mail" value="@Model.Mail" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Yorum</label>
+        <textarea class="form-control" name="Yorum" rows="4"> @Model.Yorum </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

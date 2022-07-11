@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+
+<head>
+    <title> Master login Form Responsive Widget Template  :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/webloginTema/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+</head>
+@if (TempData["success"] != null)
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.success("Giriş Başarılı", "Hoşgeldiniz");
+        });
+    </script>
+}
+@if (TempData["error"] != null)
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.error('Kullanıcı Adı Veya Şifre Hatalı', "Hata");
+        });
+    </script>
+}
+<body>
+    <div class="padding-all">
+        <div class="header">
+            <h1>Tatil Seyahat Blog Giriş</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+                <form action="/GirisYap/Login" method="post">
+                    <input type="text" name="Kullanici" placeholder="Kullanıcı Adınız" required="" />
+                    <input type="password" name="Sifre" class="padding" placeholder="Şifreniz" required="" />
+                    <input type="submit" value="Giriş Yap">
+                </form>
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2022 Tatil Seyahat Blog. Tüm Hakları Saklıdır | Tasarım  Erdem Doğanay </a></p>
+        </div>
+    </div>
+</body>
+</html>

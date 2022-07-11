@@ -1,0 +1,39 @@
+﻿@model TravelTripProject.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "HakkimizdaBilgiGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda</h2>
+@if (TempData["success"] != null)
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.success('Güncelleme Başarılı');
+        });
+    </script>
+}
+@if (TempData["error"] != null)
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.error('Güncelleme Başarısız');
+        });
+    </script>
+}
+<form method="post" class="form-group" action="/Admin/HakkimizdaGuncelle">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="exampleInputEmail1">Foto Url</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="FotoUrl" value="@Model.FotoUrl" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Açıklama</label>
+        <textarea class="form-control" id="exampleInputEmail1" rows="10" name="Aciklama" aria-describedby="emailHelp">@Model.Aciklama</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+

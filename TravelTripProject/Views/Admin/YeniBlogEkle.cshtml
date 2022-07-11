@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "YeniBlogEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card text-center h-100">
+    <h1 style="color:#61b9c0; font-size: 40px;">Yeni Blog Ekle</h1>
+</div>
+
+@if (ViewData["success"] != null)
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.success('Kayıt Başarılı');
+        });
+    </script>
+}
+@if (ViewData["error"] != null)
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.error('Kayıt Başarısız');
+        });
+    </script>
+}
+    
+<form method="post" class="form-group" action="/Admin/YeniBlogEkle">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Başlık</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="Baslik" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tarih</label>
+        <input type="date" class="form-control" id="exampleInputEmail1" name="Tarih" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Blog Image URL</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="BlogImage" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Açıklama</label>
+        <textarea class="form-control" name="Aciklama"> </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

@@ -29,5 +29,22 @@ namespace TravelTripProject.Controllers
             BlogYorum.Yorums = db.Yorumlars.Where(x => x.BlogId == id).ToList();
             return View(BlogYorum);
         }
+        [HttpGet]
+        public PartialViewResult PartialYorumYap(int id)
+        {
+            ViewBag.Id = id;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult PartialYorumYap(Yorumlar y)
+        {
+            if (y.Yorum != null && y.KullaniciAdi != null)
+            {
+                db.Yorumlars.Add(y);
+                db.SaveChanges();
+            }
+                return PartialView();
+
+        }
     }
 }

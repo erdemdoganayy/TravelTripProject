@@ -1,11 +1,12 @@
 ﻿@using TravelTripProject.Models.Siniflar
-@model List<Blog>
+@model List<Yorumlar>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Yorumlar";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Bloglarım</h2>
+<h2>Yorumlar Listesi</h2>
+
 @if (TempData["success"] != null)
 {
     <script type="text/javascript">
@@ -23,26 +24,32 @@
         });
     </script>
 }
+
 <table class="table table-bordered" style="background-color: #18191A; color: #FEFFFE; border-color: #353639 ">
     <thead class="text-center font-weight-bold">
         <tr>
             <td>ID</td>
-            <td>BAŞLIK</td>
+            <td>KULLANICI ADI</td>
+            <td>MAİL</td>
+            <td>YORUM</td>
+            <td>BULUNDUĞU BLOG</td>
             <td>GÜNCELLEME</td>
-            <td>SİLME</td>
+            <td>SİL</td>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class="text-center">
-                <td>@item.Id</td>
-                <td>@item.Baslik</td>
-                <td><a href="/Admin/BlogBilgiGetir/@item.Id"><button class="btn btn-success">Güncelle</button></a></td>
-                <td><a href="/Admin/BlogSil/@item.Id"><button class="btn btn-danger">Sil</button></a></td>
-            </tr>
+        <tr class="text-center">
+            <td>@item.Id</td>
+            <td>@item.KullaniciAdi</td>
+            <td>@item.Mail</td>
+            <td>@item.Yorum</td>
+            <td><a style="color:burlywood" target="_blank" href="../Blog/BlogDetay/@item.BlogId">@item.Blog.Baslik</a></td>
+            <td><a href="/Admin/YorumBilgiGetir/@item.Id"><button class="btn btn-success">Güncelle</button></a></td>
+            <td><a href="/Admin/YorumSil/@item.Id"><button class="btn btn-danger">Sil</button></a></td>
+        </tr>
         }
-
     </tbody>
 </table>
-<a href="/Admin/YeniBlogEkle"><button style="margin-bottom:20px" class="btn btn-info">Yeni Blog Ekle</button></a>
+
